@@ -10,7 +10,7 @@ var assert = require("assert");
 //     - https://github.com/trevnorris/cbuffer/pull/17
 var CBuffer = require("cbuffer-fusion");
 var _ = require("lodash");
-var logging = require("logging").from("stream-fusion");
+
 
 /**
  * Docs Docs Docs
@@ -45,7 +45,7 @@ function Fusa( /* **streams, [options] */ ) {
 
     _.defer(function transposerWarning(fusa) {
         if (fusa.transform === Fusa.prototype.transform) {
-            logging("Note: you probably should reimplement the base transform");
+            console.log("Note: you probably should reimplement the base transform");
         }
     }, this);
 }
@@ -103,7 +103,7 @@ Fusa.prototype.addStream = function(stream) {
             for (; index < length; index++) {
                 if (index === thisIndex) continue;
                 var currentStream = self._streams[index];
-                
+
                 // Compute the appropriate index of the data via comparitor
                 // @TODO Could avoid looking up if it is obviously out of bounds
                 var sidx = currentStream.buffer.sortedIndex(computedVal, currentStream.comparitor);

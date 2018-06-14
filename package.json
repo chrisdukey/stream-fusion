@@ -5,8 +5,7 @@
   "main": "fusion.js",
   "dependencies": {
     "cbuffer-fusion": "^1.0.0",
-    "lodash": "^3.1.0",
-    "logging": "~2.0.21"
+    "lodash": "^3.1.0"
   },
   "devDependencies": {
     "highland": "~1.27.1",
